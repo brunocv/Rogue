@@ -1,0 +1,623 @@
+\hypertarget{parser_8c}{}\section{parser.\+c File Reference}
+\label{parser_8c}\index{parser.\+c@{parser.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}estado.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}parser.\+h\char`\"{}}\\*
+Include dependency graph for parser.\+c\+:
+% FIG 0
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{parser_8c_a489d92a251650492415491f7d7b15ffc}{print\+\_\+square} (int px, int py, int tam)
+\begin{DoxyCompactList}\small\item\em imprime um quadrado numa posição \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_a349d7ef7aebbc7de2b9ed8c718c638cf}{print\+\_\+image} (int px, int py, int tam, char $\ast$imagem)
+\begin{DoxyCompactList}\small\item\em imprime uma imagem numa posição \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_a09f88a30eaeaafbccb1d8e43e154af72}{print\+\_\+bau} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em imprime o bau numa posição \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_a8a9cfe9000d98cedc7422f344f301103}{print\+\_\+move} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e, int difx, int dify, int acao)
+\begin{DoxyCompactList}\small\item\em imprime os links das jogadas possíveis \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_a2ab6d9f5888d53dc703861da4aaf5683}{print\+\_\+player} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em imprime o jogador e chama a print\+\_\+move para imprimir os links das jogadas \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_a65fb54056072c03ee169249d4a095c1d}{ata\+Espada} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e, int x, int y)
+\begin{DoxyCompactList}\small\item\em mostra o que o primeiro tipo de monstro ataca \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_a2da3c3f9797dec94397e188c20555d1d}{ata\+Lanceiro} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e, int x, int y)
+\begin{DoxyCompactList}\small\item\em mostra o que o segundo tipo de monstro ataca \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_a3e9fa88f8676aa9cf6bce63e28270081}{ata\+Arqueiro} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e, int x, int y)
+\begin{DoxyCompactList}\small\item\em mostra o que o terceiro tipo de monstro ataca \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_abc53a9b777aa5b79caf4813d57fba88d}{ata\+Dragao} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e, int x, int y)
+\begin{DoxyCompactList}\small\item\em mostra o que o quarto tipo de monstro ataca \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_a63bb96821a78ff82084843b9efd4f8e1}{print\+\_\+enemies} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em imprime os inimigos assim como o link para cada um para mostrar o que ataca (ou se o poder 3 tiver ativado para matar o monstro) \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_a223df6d5d95a9a235f04b505c07140f0}{print\+\_\+walls} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em imprime os obstaculos \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_abda8f17fa0e298c6fb3f20ae361d83c4}{print\+\_\+door} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em imprime a porta \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_a6f31a24fe416c9ce9259ce11ea23a1f1}{print\+\_\+board} ()\hypertarget{parser_8c_a6f31a24fe416c9ce9259ce11ea23a1f1}{}\label{parser_8c_a6f31a24fe416c9ce9259ce11ea23a1f1}
+
+\begin{DoxyCompactList}\small\item\em imprime o mapa de jogo \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_a98711039a318a2f5a6a4652caa775395}{print\+\_\+background} ()\hypertarget{parser_8c_a98711039a318a2f5a6a4652caa775395}{}\label{parser_8c_a98711039a318a2f5a6a4652caa775395}
+
+\begin{DoxyCompactList}\small\item\em imprime a imagem de fundo \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_a7d3c3d3dc33dad5de63230e088bd0be1}{print\+\_\+info} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em imprime informações como nível,score e vida \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_a72e98f4e714a06b82bd917171880c8f4}{print\+\_\+end} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em imprime o game over e também botões para reniciar o jogo ou ir para o menu \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_a0a048d6af8123456c892893689cfa9e7}{print\+\_\+bcheat} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em imprime o botão H\+E\+LP que mostra o que cada monstro ataca \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_a254f3f79c5850395ffc16ee84c99105c}{print\+\_\+brestart} ()\hypertarget{parser_8c_a254f3f79c5850395ffc16ee84c99105c}{}\label{parser_8c_a254f3f79c5850395ffc16ee84c99105c}
+
+\begin{DoxyCompactList}\small\item\em imprime um botão para dar restart \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_afdc3ce9460939e6230bf5fe279e89ccc}{print\+\_\+bnext} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em imprime um botão que faz com que fiquemos parados uma jogada \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_af9ad431d6d6173633aeadb63fe5f5066}{print\+\_\+bguardar} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em imprime um botão para guardar o jogo \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_a422a166a17956ef82daaf3488b56cc0d}{print\+\_\+menu} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em imprime o menu e seus botões \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_aa2f1289a57d1525afbae75a9ea65c1e2}{print\+\_\+poderes} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em imprime o menu de poderes quando se apanha o baú \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_ac0f1fbaf2574e67adee3b373d641f848}{print\+\_\+topscore} (\hyperlink{structscore}{S\+C\+O\+R\+ES} top)
+\begin{DoxyCompactList}\small\item\em imprime a página Highscore e os 3 melhores scores \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_a11f40b76f837a49044865af57827ac96}{print\+\_\+instructions} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em imprime a primeira página de instruções \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_a00d31c620748f19e0973a609dacdf386}{print\+\_\+instructions2} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em imprime a segunda página de instruções \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_ac03b27878b886af6c8776496357a9423}{jogo} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e, \hyperlink{structscore}{S\+C\+O\+R\+ES} top)
+\begin{DoxyCompactList}\small\item\em imprime todo o jogo chamando outras funções \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_ab22958c1d9df2c865265b7eeddd1537b}{guardar\+\_\+estado} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em guarda o estado de jogo num ficheiro para ser continuado \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{parser_8c_a1d78d77304284baf11f2acf5a02830e4}{ler\+\_\+estado\+\_\+guardado} ()
+\begin{DoxyCompactList}\small\item\em lê o estado de jogo que está guardado e importa para o jogo \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{parser_8c_a3abcf86b5060b8033a11a5dd5eb97ec2}{ler\+\_\+estado} (char $\ast$args)
+\begin{DoxyCompactList}\small\item\em lê o estado do ficheiro de jogo (cada jogada lê) \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_aa7e6578e1da32475a75823e612f04cf0}{escreve\+\_\+estado} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em escreve o estado de jogo no ficheiro (cada jogada) \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_a6bff273f0bf720f77c21df66f4bf4b22}{guardar\+\_\+highscore} (\hyperlink{structscore}{S\+C\+O\+R\+ES} top)
+\begin{DoxyCompactList}\small\item\em guarda os melhores scores num ficheiro \end{DoxyCompactList}\item 
+\hyperlink{structscore}{S\+C\+O\+R\+ES} \hyperlink{parser_8c_a45085db447ebe634b861963c82a047c4}{ler\+\_\+highscore} ()
+\begin{DoxyCompactList}\small\item\em lê os melhores scores do ficheiro \end{DoxyCompactList}\item 
+\hyperlink{structscore}{S\+C\+O\+R\+ES} \hyperlink{parser_8c_af2ee4a55a81f9661a9a4e43e6e5de576}{modifica} (\hyperlink{structscore}{S\+C\+O\+R\+ES} top, int x)
+\begin{DoxyCompactList}\small\item\em modifica a struct de melhores scores conforme o score obtido no jogo anterior \end{DoxyCompactList}\item 
+void \hyperlink{parser_8c_ac15f7c36f6055edec43d0f0f611c4dc0}{parser} ()\hypertarget{parser_8c_ac15f7c36f6055edec43d0f0f611c4dc0}{}\label{parser_8c_ac15f7c36f6055edec43d0f0f611c4dc0}
+
+\begin{DoxyCompactList}\small\item\em função que comanda o jogo todo, lê Query String, manda alterar o estado, manda guardar/ler ficheiros, passa de nível, e imprime o jogo \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{parser.\+c@{parser.\+c}!ata\+Arqueiro@{ata\+Arqueiro}}
+\index{ata\+Arqueiro@{ata\+Arqueiro}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{ata\+Arqueiro(\+E\+S\+T\+A\+D\+O e, int x, int y)}{ataArqueiro(ESTADO e, int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void ata\+Arqueiro (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_a3e9fa88f8676aa9cf6bce63e28270081}{}\label{parser_8c_a3e9fa88f8676aa9cf6bce63e28270081}
+
+
+mostra o que o terceiro tipo de monstro ataca 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+{\em x} & posição do monstro nas abcissas \\
+\hline
+{\em y} & posição do monstro nas ordenadas \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!ata\+Dragao@{ata\+Dragao}}
+\index{ata\+Dragao@{ata\+Dragao}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{ata\+Dragao(\+E\+S\+T\+A\+D\+O e, int x, int y)}{ataDragao(ESTADO e, int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void ata\+Dragao (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_abc53a9b777aa5b79caf4813d57fba88d}{}\label{parser_8c_abc53a9b777aa5b79caf4813d57fba88d}
+
+
+mostra o que o quarto tipo de monstro ataca 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+{\em x} & posição do monstro nas abcissas \\
+\hline
+{\em y} & posição do monstro nas ordenadas \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!ata\+Espada@{ata\+Espada}}
+\index{ata\+Espada@{ata\+Espada}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{ata\+Espada(\+E\+S\+T\+A\+D\+O e, int x, int y)}{ataEspada(ESTADO e, int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void ata\+Espada (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_a65fb54056072c03ee169249d4a095c1d}{}\label{parser_8c_a65fb54056072c03ee169249d4a095c1d}
+
+
+mostra o que o primeiro tipo de monstro ataca 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+{\em x} & posição do monstro nas abcissas \\
+\hline
+{\em y} & posição do monstro nas ordenadas \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!ata\+Lanceiro@{ata\+Lanceiro}}
+\index{ata\+Lanceiro@{ata\+Lanceiro}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{ata\+Lanceiro(\+E\+S\+T\+A\+D\+O e, int x, int y)}{ataLanceiro(ESTADO e, int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void ata\+Lanceiro (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_a2da3c3f9797dec94397e188c20555d1d}{}\label{parser_8c_a2da3c3f9797dec94397e188c20555d1d}
+
+
+mostra o que o segundo tipo de monstro ataca 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+{\em x} & posição do monstro nas abcissas \\
+\hline
+{\em y} & posição do monstro nas ordenadas \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!escreve\+\_\+estado@{escreve\+\_\+estado}}
+\index{escreve\+\_\+estado@{escreve\+\_\+estado}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{escreve\+\_\+estado(\+E\+S\+T\+A\+D\+O e)}{escreve_estado(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}void escreve\+\_\+estado (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_aa7e6578e1da32475a75823e612f04cf0}{}\label{parser_8c_aa7e6578e1da32475a75823e612f04cf0}
+
+
+escreve o estado de jogo no ficheiro (cada jogada) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!guardar\+\_\+estado@{guardar\+\_\+estado}}
+\index{guardar\+\_\+estado@{guardar\+\_\+estado}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{guardar\+\_\+estado(\+E\+S\+T\+A\+D\+O e)}{guardar_estado(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}void guardar\+\_\+estado (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_ab22958c1d9df2c865265b7eeddd1537b}{}\label{parser_8c_ab22958c1d9df2c865265b7eeddd1537b}
+
+
+guarda o estado de jogo num ficheiro para ser continuado 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!guardar\+\_\+highscore@{guardar\+\_\+highscore}}
+\index{guardar\+\_\+highscore@{guardar\+\_\+highscore}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{guardar\+\_\+highscore(\+S\+C\+O\+R\+E\+S top)}{guardar_highscore(SCORES top)}}]{\setlength{\rightskip}{0pt plus 5cm}void guardar\+\_\+highscore (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+C\+O\+R\+ES}}]{top}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_a6bff273f0bf720f77c21df66f4bf4b22}{}\label{parser_8c_a6bff273f0bf720f77c21df66f4bf4b22}
+
+
+guarda os melhores scores num ficheiro 
+
+
+\begin{DoxyParams}{Parameters}
+{\em top} & struct com os melhores scores \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!jogo@{jogo}}
+\index{jogo@{jogo}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{jogo(\+E\+S\+T\+A\+D\+O e, S\+C\+O\+R\+E\+S top)}{jogo(ESTADO e, SCORES top)}}]{\setlength{\rightskip}{0pt plus 5cm}void jogo (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e, }
+\item[{{\bf S\+C\+O\+R\+ES}}]{top}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_ac03b27878b886af6c8776496357a9423}{}\label{parser_8c_ac03b27878b886af6c8776496357a9423}
+
+
+imprime todo o jogo chamando outras funções 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+{\em top} & struct com os 3 melhores scores \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!ler\+\_\+estado@{ler\+\_\+estado}}
+\index{ler\+\_\+estado@{ler\+\_\+estado}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{ler\+\_\+estado(char $\ast$args)}{ler_estado(char *args)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} ler\+\_\+estado (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{args}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_a3abcf86b5060b8033a11a5dd5eb97ec2}{}\label{parser_8c_a3abcf86b5060b8033a11a5dd5eb97ec2}
+
+
+lê o estado do ficheiro de jogo (cada jogada lê) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$args} & parâmetros da Query String \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+estado de jogo 
+\end{DoxyReturn}
+\index{parser.\+c@{parser.\+c}!ler\+\_\+estado\+\_\+guardado@{ler\+\_\+estado\+\_\+guardado}}
+\index{ler\+\_\+estado\+\_\+guardado@{ler\+\_\+estado\+\_\+guardado}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{ler\+\_\+estado\+\_\+guardado()}{ler_estado_guardado()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} ler\+\_\+estado\+\_\+guardado (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_a1d78d77304284baf11f2acf5a02830e4}{}\label{parser_8c_a1d78d77304284baf11f2acf5a02830e4}
+
+
+lê o estado de jogo que está guardado e importa para o jogo 
+
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{parser.\+c@{parser.\+c}!ler\+\_\+highscore@{ler\+\_\+highscore}}
+\index{ler\+\_\+highscore@{ler\+\_\+highscore}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{ler\+\_\+highscore()}{ler_highscore()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+C\+O\+R\+ES} ler\+\_\+highscore (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_a45085db447ebe634b861963c82a047c4}{}\label{parser_8c_a45085db447ebe634b861963c82a047c4}
+
+
+lê os melhores scores do ficheiro 
+
+\begin{DoxyReturn}{Returns}
+struct com melhores scores 
+\end{DoxyReturn}
+\index{parser.\+c@{parser.\+c}!modifica@{modifica}}
+\index{modifica@{modifica}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{modifica(\+S\+C\+O\+R\+E\+S top, int x)}{modifica(SCORES top, int x)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+C\+O\+R\+ES} modifica (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+C\+O\+R\+ES}}]{top, }
+\item[{int}]{x}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_af2ee4a55a81f9661a9a4e43e6e5de576}{}\label{parser_8c_af2ee4a55a81f9661a9a4e43e6e5de576}
+
+
+modifica a struct de melhores scores conforme o score obtido no jogo anterior 
+
+
+\begin{DoxyParams}{Parameters}
+{\em top} & struct com os melhores scores \\
+\hline
+{\em x} & score a colocar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+struct atualizada dos melhores scores 
+\end{DoxyReturn}
+\index{parser.\+c@{parser.\+c}!print\+\_\+bau@{print\+\_\+bau}}
+\index{print\+\_\+bau@{print\+\_\+bau}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{print\+\_\+bau(\+E\+S\+T\+A\+D\+O e)}{print_bau(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+bau (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_a09f88a30eaeaafbccb1d8e43e154af72}{}\label{parser_8c_a09f88a30eaeaafbccb1d8e43e154af72}
+
+
+imprime o bau numa posição 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!print\+\_\+bcheat@{print\+\_\+bcheat}}
+\index{print\+\_\+bcheat@{print\+\_\+bcheat}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{print\+\_\+bcheat(\+E\+S\+T\+A\+D\+O e)}{print_bcheat(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+bcheat (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_a0a048d6af8123456c892893689cfa9e7}{}\label{parser_8c_a0a048d6af8123456c892893689cfa9e7}
+
+
+imprime o botão H\+E\+LP que mostra o que cada monstro ataca 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!print\+\_\+bguardar@{print\+\_\+bguardar}}
+\index{print\+\_\+bguardar@{print\+\_\+bguardar}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{print\+\_\+bguardar(\+E\+S\+T\+A\+D\+O e)}{print_bguardar(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+bguardar (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_af9ad431d6d6173633aeadb63fe5f5066}{}\label{parser_8c_af9ad431d6d6173633aeadb63fe5f5066}
+
+
+imprime um botão para guardar o jogo 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!print\+\_\+bnext@{print\+\_\+bnext}}
+\index{print\+\_\+bnext@{print\+\_\+bnext}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{print\+\_\+bnext(\+E\+S\+T\+A\+D\+O e)}{print_bnext(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+bnext (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_afdc3ce9460939e6230bf5fe279e89ccc}{}\label{parser_8c_afdc3ce9460939e6230bf5fe279e89ccc}
+
+
+imprime um botão que faz com que fiquemos parados uma jogada 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!print\+\_\+door@{print\+\_\+door}}
+\index{print\+\_\+door@{print\+\_\+door}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{print\+\_\+door(\+E\+S\+T\+A\+D\+O e)}{print_door(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+door (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_abda8f17fa0e298c6fb3f20ae361d83c4}{}\label{parser_8c_abda8f17fa0e298c6fb3f20ae361d83c4}
+
+
+imprime a porta 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!print\+\_\+end@{print\+\_\+end}}
+\index{print\+\_\+end@{print\+\_\+end}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{print\+\_\+end(\+E\+S\+T\+A\+D\+O e)}{print_end(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+end (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_a72e98f4e714a06b82bd917171880c8f4}{}\label{parser_8c_a72e98f4e714a06b82bd917171880c8f4}
+
+
+imprime o game over e também botões para reniciar o jogo ou ir para o menu 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!print\+\_\+enemies@{print\+\_\+enemies}}
+\index{print\+\_\+enemies@{print\+\_\+enemies}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{print\+\_\+enemies(\+E\+S\+T\+A\+D\+O e)}{print_enemies(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+enemies (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_a63bb96821a78ff82084843b9efd4f8e1}{}\label{parser_8c_a63bb96821a78ff82084843b9efd4f8e1}
+
+
+imprime os inimigos assim como o link para cada um para mostrar o que ataca (ou se o poder 3 tiver ativado para matar o monstro) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!print\+\_\+image@{print\+\_\+image}}
+\index{print\+\_\+image@{print\+\_\+image}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{print\+\_\+image(int px, int py, int tam, char $\ast$imagem)}{print_image(int px, int py, int tam, char *imagem)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+image (
+\begin{DoxyParamCaption}
+\item[{int}]{px, }
+\item[{int}]{py, }
+\item[{int}]{tam, }
+\item[{char $\ast$}]{imagem}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_a349d7ef7aebbc7de2b9ed8c718c638cf}{}\label{parser_8c_a349d7ef7aebbc7de2b9ed8c718c638cf}
+
+
+imprime uma imagem numa posição 
+
+
+\begin{DoxyParams}{Parameters}
+{\em px} & abcissa da imagem \\
+\hline
+{\em py} & ordenada da imagem \\
+\hline
+{\em tam} & tamanho de cada imagem \\
+\hline
+{\em $\ast$imagem} & imagem a colocar \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!print\+\_\+info@{print\+\_\+info}}
+\index{print\+\_\+info@{print\+\_\+info}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{print\+\_\+info(\+E\+S\+T\+A\+D\+O e)}{print_info(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+info (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_a7d3c3d3dc33dad5de63230e088bd0be1}{}\label{parser_8c_a7d3c3d3dc33dad5de63230e088bd0be1}
+
+
+imprime informações como nível,score e vida 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!print\+\_\+instructions@{print\+\_\+instructions}}
+\index{print\+\_\+instructions@{print\+\_\+instructions}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{print\+\_\+instructions(\+E\+S\+T\+A\+D\+O e)}{print_instructions(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+instructions (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_a11f40b76f837a49044865af57827ac96}{}\label{parser_8c_a11f40b76f837a49044865af57827ac96}
+
+
+imprime a primeira página de instruções 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!print\+\_\+instructions2@{print\+\_\+instructions2}}
+\index{print\+\_\+instructions2@{print\+\_\+instructions2}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{print\+\_\+instructions2(\+E\+S\+T\+A\+D\+O e)}{print_instructions2(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+instructions2 (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_a00d31c620748f19e0973a609dacdf386}{}\label{parser_8c_a00d31c620748f19e0973a609dacdf386}
+
+
+imprime a segunda página de instruções 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!print\+\_\+menu@{print\+\_\+menu}}
+\index{print\+\_\+menu@{print\+\_\+menu}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{print\+\_\+menu(\+E\+S\+T\+A\+D\+O e)}{print_menu(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+menu (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_a422a166a17956ef82daaf3488b56cc0d}{}\label{parser_8c_a422a166a17956ef82daaf3488b56cc0d}
+
+
+imprime o menu e seus botões 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!print\+\_\+move@{print\+\_\+move}}
+\index{print\+\_\+move@{print\+\_\+move}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{print\+\_\+move(\+E\+S\+T\+A\+D\+O e, int difx, int dify, int acao)}{print_move(ESTADO e, int difx, int dify, int acao)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+move (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e, }
+\item[{int}]{difx, }
+\item[{int}]{dify, }
+\item[{int}]{acao}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_a8a9cfe9000d98cedc7422f344f301103}{}\label{parser_8c_a8a9cfe9000d98cedc7422f344f301103}
+
+
+imprime os links das jogadas possíveis 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+{\em difx} & distancia a percorrer nas abcissas \\
+\hline
+{\em dify} & distancia a percorrer nas ordenadas \\
+\hline
+{\em acao} & para identificar que tipo de movimento foi \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!print\+\_\+player@{print\+\_\+player}}
+\index{print\+\_\+player@{print\+\_\+player}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{print\+\_\+player(\+E\+S\+T\+A\+D\+O e)}{print_player(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+player (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_a2ab6d9f5888d53dc703861da4aaf5683}{}\label{parser_8c_a2ab6d9f5888d53dc703861da4aaf5683}
+
+
+imprime o jogador e chama a print\+\_\+move para imprimir os links das jogadas 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!print\+\_\+poderes@{print\+\_\+poderes}}
+\index{print\+\_\+poderes@{print\+\_\+poderes}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{print\+\_\+poderes(\+E\+S\+T\+A\+D\+O e)}{print_poderes(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+poderes (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_aa2f1289a57d1525afbae75a9ea65c1e2}{}\label{parser_8c_aa2f1289a57d1525afbae75a9ea65c1e2}
+
+
+imprime o menu de poderes quando se apanha o baú 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!print\+\_\+square@{print\+\_\+square}}
+\index{print\+\_\+square@{print\+\_\+square}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{print\+\_\+square(int px, int py, int tam)}{print_square(int px, int py, int tam)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+square (
+\begin{DoxyParamCaption}
+\item[{int}]{px, }
+\item[{int}]{py, }
+\item[{int}]{tam}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_a489d92a251650492415491f7d7b15ffc}{}\label{parser_8c_a489d92a251650492415491f7d7b15ffc}
+
+
+imprime um quadrado numa posição 
+
+
+\begin{DoxyParams}{Parameters}
+{\em px} & abcissa do quadrado \\
+\hline
+{\em py} & ordenada do quadrado \\
+\hline
+{\em tam} & tamanho de cada quadrado \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!print\+\_\+topscore@{print\+\_\+topscore}}
+\index{print\+\_\+topscore@{print\+\_\+topscore}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{print\+\_\+topscore(\+S\+C\+O\+R\+E\+S top)}{print_topscore(SCORES top)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+topscore (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+C\+O\+R\+ES}}]{top}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_ac0f1fbaf2574e67adee3b373d641f848}{}\label{parser_8c_ac0f1fbaf2574e67adee3b373d641f848}
+
+
+imprime a página Highscore e os 3 melhores scores 
+
+
+\begin{DoxyParams}{Parameters}
+{\em top} & struct com os 3 melhores scores \\
+\hline
+\end{DoxyParams}
+\index{parser.\+c@{parser.\+c}!print\+\_\+walls@{print\+\_\+walls}}
+\index{print\+\_\+walls@{print\+\_\+walls}!parser.\+c@{parser.\+c}}
+\subsubsection[{\texorpdfstring{print\+\_\+walls(\+E\+S\+T\+A\+D\+O e)}{print_walls(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}void print\+\_\+walls (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{parser_8c_a223df6d5d95a9a235f04b505c07140f0}{}\label{parser_8c_a223df6d5d95a9a235f04b505c07140f0}
+
+
+imprime os obstaculos 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}

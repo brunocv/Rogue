@@ -1,0 +1,59 @@
+\hypertarget{structespecial}{}\section{especial Struct Reference}
+\label{structespecial}\index{especial@{especial}}
+
+
+Collaboration diagram for especial\+:
+% FIG 0
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char {\bfseries show}\hypertarget{structespecial_af031f31012955a6cfeae61fe3dae82dc}{}\label{structespecial_af031f31012955a6cfeae61fe3dae82dc}
+
+\item 
+char {\bfseries show2}\hypertarget{structespecial_aa1054ec08d0d79cdecc5276b48eee99a}{}\label{structespecial_aa1054ec08d0d79cdecc5276b48eee99a}
+
+\item 
+char {\bfseries show3}\hypertarget{structespecial_a3a63cb0e37bfbdb7ed78f4daacb985a3}{}\label{structespecial_a3a63cb0e37bfbdb7ed78f4daacb985a3}
+
+\item 
+char {\bfseries show4}\hypertarget{structespecial_abc3893cf0d346b82f4747d9ccb25bcca}{}\label{structespecial_abc3893cf0d346b82f4747d9ccb25bcca}
+
+\item 
+\hyperlink{structposicao}{P\+O\+S\+I\+C\+AO} {\bfseries ataque}\hypertarget{structespecial_a6a77206f06920d5c2bca72c6ed74ac90}{}\label{structespecial_a6a77206f06920d5c2bca72c6ed74ac90}
+
+\item 
+char {\bfseries cheat}\hypertarget{structespecial_a8c1a58b1321bb7a2c6eba4f4fa49fefe}{}\label{structespecial_a8c1a58b1321bb7a2c6eba4f4fa49fefe}
+
+\item 
+char {\bfseries menu}\hypertarget{structespecial_aadc0f3728cac058700a8b2aa144b7720}{}\label{structespecial_aadc0f3728cac058700a8b2aa144b7720}
+
+\item 
+\hyperlink{structposicao}{P\+O\+S\+I\+C\+AO} {\bfseries bau}\hypertarget{structespecial_ad8054a7b690948458ec69411629ee0b3}{}\label{structespecial_ad8054a7b690948458ec69411629ee0b3}
+
+\item 
+char {\bfseries ativa\+Bau}\hypertarget{structespecial_ac67764954ed1ac6696403048870eba25}{}\label{structespecial_ac67764954ed1ac6696403048870eba25}
+
+\item 
+char {\bfseries poder2}\hypertarget{structespecial_a9c1028cbef94087ff7bbffe460260528}{}\label{structespecial_a9c1028cbef94087ff7bbffe460260528}
+
+\item 
+char {\bfseries poder3}\hypertarget{structespecial_a322518f66509ede796d2d52d8424f4d0}{}\label{structespecial_a322518f66509ede796d2d52d8424f4d0}
+
+\item 
+char {\bfseries nope}\hypertarget{structespecial_aeed061e97d44e7788b2c07a44f3ce3b3}{}\label{structespecial_aeed061e97d44e7788b2c07a44f3ce3b3}
+
+\item 
+char {\bfseries topscore}\hypertarget{structespecial_a01ca8b58821f5369af7239c571d2b248}{}\label{structespecial_a01ca8b58821f5369af7239c571d2b248}
+
+\item 
+char {\bfseries instruction}\hypertarget{structespecial_a66223c39cedcea3a1185b0fc313880cf}{}\label{structespecial_a66223c39cedcea3a1185b0fc313880cf}
+
+\item 
+char {\bfseries instruction2}\hypertarget{structespecial_af4794f16d295ffd4ecb261aa7e2027c6}{}\label{structespecial_af4794f16d295ffd4ecb261aa7e2027c6}
+
+\end{DoxyCompactItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+estado.\+h\end{DoxyCompactItemize}

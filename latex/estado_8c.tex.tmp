@@ -1,0 +1,845 @@
+\hypertarget{estado_8c}{}\section{estado.\+c File Reference}
+\label{estado_8c}\index{estado.\+c@{estado.\+c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}estado.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}parser.\+h\char`\"{}}\\*
+Include dependency graph for estado.\+c\+:
+% FIG 0
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries M\+A\+X\+\_\+\+B\+U\+F\+F\+ER}~10240\hypertarget{estado_8c_a1d5dab30b404fab91608086105afc78c}{}\label{estado_8c_a1d5dab30b404fab91608086105afc78c}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{estado_8c_a90c566e51f6fc49b0e9bceda39de3549}{tem\+Inimigo} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e, int x, int y)
+\begin{DoxyCompactList}\small\item\em verifica se tem inimigo na posição (x,y) e dá 0 caso tenha \end{DoxyCompactList}\item 
+int \hyperlink{estado_8c_ab494c03bbc20bc1bee7f8d324febd0f4}{pospossivel} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e, int x, int y)
+\begin{DoxyCompactList}\small\item\em verifica se a posição é possível \end{DoxyCompactList}\item 
+int \hyperlink{estado_8c_af275220099820d9ca12408615c368ecf}{pospossivel2} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e, int x, int y)
+\begin{DoxyCompactList}\small\item\em verifica se a posição é possível mas para os movimentos do jogador \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_a9bc2d9f65ff55a7b8196d0cd97cd4d62}{inicializar} (int nivel, int vida, int \hyperlink{structscore}{score}, int menu)
+\begin{DoxyCompactList}\small\item\em inicializa o estado \end{DoxyCompactList}\item 
+char $\ast$ \hyperlink{estado_8c_af32bcca287788ae0563fa9a6debf4603}{estado2str} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em pega no estado e passa para string (deixou se ser usado mas deixa-\/mos aqui) \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_a45c321c3b31e4e95b8451d7db7678cf0}{str2estado} (char $\ast$argumentos)
+\begin{DoxyCompactList}\small\item\em pega numa string e converte para estado de jogo (também não está a ser usado) \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_a1b7f4136b79a35985dfb503a9048f321}{move\+Enemy} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em move os inimigos \end{DoxyCompactList}\item 
+int \hyperlink{estado_8c_a141cd44a37e7a01a418a7b722168fc67}{obstaculo} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em verifica se o jogador está em cima de obstáculos \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_ade8a822e10df2b11bbbb6455cd22c25a}{atacar\+Espada} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em verifica o que se o primeiro tipo de monstro tem distancia suficiente para nos atacar, também mata o monstro e ao matar dá-\/nos score \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_a9fb038e3e6deeb73f29b3230b79eb4e0}{atacar\+Lanceiro} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em verifica o que se o segundo tipo de monstro tem distancia suficiente para nos atacar, também mata o monstro e ao matar dá-\/nos score \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_ae519a7a4e97020b73fd0757a63800f36}{atacar\+Arqueiro} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em verifica o que se o terceiro tipo de monstro tem distancia suficiente para nos atacar, também mata o monstro e ao matar dá-\/nos score \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_a0633b84e7bfc994e62bc4e08bb7e1508}{atacar\+Dragao} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em verifica o que se o quarto tipo de monstro tem distancia suficiente para nos atacar, também mata o monstro e ao matar dá-\/nos score \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_adc289b4c76628e1ac851e37f7d312f02}{show} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e, int x, int y)
+\begin{DoxyCompactList}\small\item\em ativa/desativa a variavel de controlo e.\+especial.\+show, quando carregamos num monstro de primeiro tipo guardamos as coordenadas dele para imprimir o que ele ataca \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_a796ca6f74f67f11f6e74112a369562c7}{show2} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e, int x, int y)
+\begin{DoxyCompactList}\small\item\em ativa/desativa a variavel de controlo e.\+especial.\+show, quando carregamos num monstro de segundo tipo guardamos as coordenadas dele para imprimir o que ele ataca \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_a93f87d6a8260293b4087ad9df6f02b48}{show3} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e, int x, int y)
+\begin{DoxyCompactList}\small\item\em ativa/desativa a variavel de controlo e.\+especial.\+show, quando carregamos num monstro de terceiro tipo guardamos as coordenadas dele para imprimir o que ele ataca \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_aec5c9e536eb6e8a67428929dd302f560}{show4} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e, int x, int y)
+\begin{DoxyCompactList}\small\item\em ativa/desativa a variavel de controlo e.\+especial.\+show, quando carregamos num monstro de quarto tipo guardamos as coordenadas dele para imprimir o que ele ataca \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_a294259fb43e07ca05d590884e9d78a73}{cheater} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em ativa/desativa a variavel de controlo e.\+especial.\+cheat que serve para depois imprimir os ataques de todos os monstros \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_a69afa5319955dedcf873876e97490a80}{move\+\_\+player} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e, int difx, int dify)
+\begin{DoxyCompactList}\small\item\em move o jogador, vê se estamos em cima de obstáculo, se apanhamos o baú e move os monstros \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_a71bc01d6d6858ac6bc9f44b720acbb52}{play} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em desativa a váriavel e.\+especial.\+menu para começar o jogo \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_aab123078675387a2210f02ef5beb5c5c}{poder1} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em ativa o poder 1 e mete a variável e.\+especial.\+nope a 1 para evitar que o jogador volte atrás e possa estar sempre a escolher novos poderes \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_a856149e97a8950c66bd56ac2c8e71aed}{poder2} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em ativa o poder 2 e mete a variável e.\+especial.\+nope a 1 para evitar que o jogador volte atrás e possa estar sempre a escolher novos poderes \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_ad3c28fb1b5957ae9ae04200b19629ab9}{poder3} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em ativa o poder 3 e mete a variável e.\+especial.\+nope a 1 para evitar que o jogador volte atrás e possa estar sempre a escolher novos poderes \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_aec79c6434a433e272cb5f7d8e789d519}{efeito\+Poder3} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e, int x, int y)
+\begin{DoxyCompactList}\small\item\em pega no estado e nas coordenadas e mata o monstro que estiver nessas coordenadas (poder 3) \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_a109a08650897c5886099ef1af50f568f}{poder4} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em ativa o poder 4 e mete a variável e.\+especial.\+nope a 1 para evitar que o jogador volte atrás e possa estar sempre a escolher novos poderes \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_af767de19f387fb7d94c0258e7ecbc354}{top\+Score} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em ativa a variável e.\+epecial.\+topscore que é para no menu ir para a página dos scores quando carrego no botão \char`\"{}\+Highscore\char`\"{} \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_a6a714f119130df7bb77d5766c827c42b}{instruction} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em ativa a variável e.\+epecial.\+instruction que é para no menu ir para a página das instruções quando carrego no botão \char`\"{}\+Instructions\char`\"{} \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_a6cd46b20f9ac835ad598a22422306603}{ler} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em ativa a variável e.\+ficheiro.\+ler que é para quando carregar em \char`\"{}\+Continue\char`\"{} saber que tenho de ir ao ficheiro à parte ler o estado que tinha guardado quando mandei guardar e começar o jogo com este estado \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_ac664824891a87ddaf2fb59cdec719475}{guardar} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em ativa a variável e.\+ficheiro.\+guardar que é para guardar o estado num ficheiro para ser possível continuar mais tarde e também ativa a e.\+ficheiro.\+guardou para evitar que volte atrás para tentar jogar outra vez \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_a09bebc4e760247c3d8bfff4ebb865b49}{instruction2} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em ativa a variável e.\+especial.\+instruction2 que vai para a segunda página de instruções \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_a6117f77bc02648961ec6ee571d14df01}{enemy1} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em ativa a variável e.\+extra.\+enemy1 que é para na segunda página de instruções mostrar informação sobre o tipo 1 de monstro \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_a217e9bf056bee011c99007f9b26e66c8}{enemy2} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em ativa a variável e.\+extra.\+enemy2 que é para na segunda página de instruções mostrar informação sobre o tipo 2 de monstro \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_a46b64cc82490e48709eb61c3279075a8}{enemy3} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em ativa a variável e.\+extra.\+enemy3 que é para na segunda página de instruções mostrar informação sobre o tipo 3 de monstro \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_a10e86df79da0247babc14e2fe9e66eff}{enemy4} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e)
+\begin{DoxyCompactList}\small\item\em ativa a variável e.\+extra.\+enemy4 que é para na segunda página de instruções mostrar informação sobre o tipo 4 de monstro \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_a7b133aeb898c92109bceda6c4583c42f}{altera\+Acao} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e, int acao, int x, int y)
+\begin{DoxyCompactList}\small\item\em altera o estado conforme a ação do link \end{DoxyCompactList}\item 
+\hyperlink{structestado}{E\+S\+T\+A\+DO} \hyperlink{estado_8c_ac8ab531eb704c4f2d47dcaeb9c5ab5b4}{altera\+Acao\+\_\+menu} (\hyperlink{structestado}{E\+S\+T\+A\+DO} e, int acao)
+\begin{DoxyCompactList}\small\item\em altera o estado conforme a ação do link \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{estado.\+c@{estado.\+c}!altera\+Acao@{altera\+Acao}}
+\index{altera\+Acao@{altera\+Acao}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{altera\+Acao(\+E\+S\+T\+A\+D\+O e, int acao, int x, int y)}{alteraAcao(ESTADO e, int acao, int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} altera\+Acao (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e, }
+\item[{int}]{acao, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_a7b133aeb898c92109bceda6c4583c42f}{}\label{estado_8c_a7b133aeb898c92109bceda6c4583c42f}
+
+
+altera o estado conforme a ação do link 
+
+altera o estado de jogo conforme a ação
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+{\em acao} & acao a executar \\
+\hline
+{\em x} & segundo parametro da query que pode representar a abcissa de monstro ou jogador \\
+\hline
+{\em y} & terceiro parametro da query que pode representar a ordenada de monstro ou jogador \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!altera\+Acao\+\_\+menu@{altera\+Acao\+\_\+menu}}
+\index{altera\+Acao\+\_\+menu@{altera\+Acao\+\_\+menu}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{altera\+Acao\+\_\+menu(\+E\+S\+T\+A\+D\+O e, int acao)}{alteraAcao_menu(ESTADO e, int acao)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} altera\+Acao\+\_\+menu (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e, }
+\item[{int}]{acao}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_ac8ab531eb704c4f2d47dcaeb9c5ab5b4}{}\label{estado_8c_ac8ab531eb704c4f2d47dcaeb9c5ab5b4}
+
+
+altera o estado conforme a ação do link 
+
+altera o estado de jogo conforme a ação
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+{\em acao} & acao a executar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!atacar\+Arqueiro@{atacar\+Arqueiro}}
+\index{atacar\+Arqueiro@{atacar\+Arqueiro}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{atacar\+Arqueiro(\+E\+S\+T\+A\+D\+O e)}{atacarArqueiro(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} atacar\+Arqueiro (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_ae519a7a4e97020b73fd0757a63800f36}{}\label{estado_8c_ae519a7a4e97020b73fd0757a63800f36}
+
+
+verifica o que se o terceiro tipo de monstro tem distancia suficiente para nos atacar, também mata o monstro e ao matar dá-\/nos score 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!atacar\+Dragao@{atacar\+Dragao}}
+\index{atacar\+Dragao@{atacar\+Dragao}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{atacar\+Dragao(\+E\+S\+T\+A\+D\+O e)}{atacarDragao(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} atacar\+Dragao (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_a0633b84e7bfc994e62bc4e08bb7e1508}{}\label{estado_8c_a0633b84e7bfc994e62bc4e08bb7e1508}
+
+
+verifica o que se o quarto tipo de monstro tem distancia suficiente para nos atacar, também mata o monstro e ao matar dá-\/nos score 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!atacar\+Espada@{atacar\+Espada}}
+\index{atacar\+Espada@{atacar\+Espada}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{atacar\+Espada(\+E\+S\+T\+A\+D\+O e)}{atacarEspada(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} atacar\+Espada (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_ade8a822e10df2b11bbbb6455cd22c25a}{}\label{estado_8c_ade8a822e10df2b11bbbb6455cd22c25a}
+
+
+verifica o que se o primeiro tipo de monstro tem distancia suficiente para nos atacar, também mata o monstro e ao matar dá-\/nos score 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!atacar\+Lanceiro@{atacar\+Lanceiro}}
+\index{atacar\+Lanceiro@{atacar\+Lanceiro}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{atacar\+Lanceiro(\+E\+S\+T\+A\+D\+O e)}{atacarLanceiro(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} atacar\+Lanceiro (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_a9fb038e3e6deeb73f29b3230b79eb4e0}{}\label{estado_8c_a9fb038e3e6deeb73f29b3230b79eb4e0}
+
+
+verifica o que se o segundo tipo de monstro tem distancia suficiente para nos atacar, também mata o monstro e ao matar dá-\/nos score 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!cheater@{cheater}}
+\index{cheater@{cheater}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{cheater(\+E\+S\+T\+A\+D\+O e)}{cheater(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} cheater (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_a294259fb43e07ca05d590884e9d78a73}{}\label{estado_8c_a294259fb43e07ca05d590884e9d78a73}
+
+
+ativa/desativa a variavel de controlo e.\+especial.\+cheat que serve para depois imprimir os ataques de todos os monstros 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!efeito\+Poder3@{efeito\+Poder3}}
+\index{efeito\+Poder3@{efeito\+Poder3}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{efeito\+Poder3(\+E\+S\+T\+A\+D\+O e, int x, int y)}{efeitoPoder3(ESTADO e, int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} efeito\+Poder3 (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_aec79c6434a433e272cb5f7d8e789d519}{}\label{estado_8c_aec79c6434a433e272cb5f7d8e789d519}
+
+
+pega no estado e nas coordenadas e mata o monstro que estiver nessas coordenadas (poder 3) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+{\em x} & abcissa do monstro \\
+\hline
+{\em y} & ordenada do monstro \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!enemy1@{enemy1}}
+\index{enemy1@{enemy1}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{enemy1(\+E\+S\+T\+A\+D\+O e)}{enemy1(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} enemy1 (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_a6117f77bc02648961ec6ee571d14df01}{}\label{estado_8c_a6117f77bc02648961ec6ee571d14df01}
+
+
+ativa a variável e.\+extra.\+enemy1 que é para na segunda página de instruções mostrar informação sobre o tipo 1 de monstro 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!enemy2@{enemy2}}
+\index{enemy2@{enemy2}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{enemy2(\+E\+S\+T\+A\+D\+O e)}{enemy2(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} enemy2 (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_a217e9bf056bee011c99007f9b26e66c8}{}\label{estado_8c_a217e9bf056bee011c99007f9b26e66c8}
+
+
+ativa a variável e.\+extra.\+enemy2 que é para na segunda página de instruções mostrar informação sobre o tipo 2 de monstro 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!enemy3@{enemy3}}
+\index{enemy3@{enemy3}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{enemy3(\+E\+S\+T\+A\+D\+O e)}{enemy3(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} enemy3 (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_a46b64cc82490e48709eb61c3279075a8}{}\label{estado_8c_a46b64cc82490e48709eb61c3279075a8}
+
+
+ativa a variável e.\+extra.\+enemy3 que é para na segunda página de instruções mostrar informação sobre o tipo 3 de monstro 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!enemy4@{enemy4}}
+\index{enemy4@{enemy4}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{enemy4(\+E\+S\+T\+A\+D\+O e)}{enemy4(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} enemy4 (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_a10e86df79da0247babc14e2fe9e66eff}{}\label{estado_8c_a10e86df79da0247babc14e2fe9e66eff}
+
+
+ativa a variável e.\+extra.\+enemy4 que é para na segunda página de instruções mostrar informação sobre o tipo 4 de monstro 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!estado2str@{estado2str}}
+\index{estado2str@{estado2str}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{estado2str(\+E\+S\+T\+A\+D\+O e)}{estado2str(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}char$\ast$ estado2str (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_af32bcca287788ae0563fa9a6debf4603}{}\label{estado_8c_af32bcca287788ae0563fa9a6debf4603}
+
+
+pega no estado e passa para string (deixou se ser usado mas deixa-\/mos aqui) 
+
+Função que converte um estado numa string.
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string com o estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!guardar@{guardar}}
+\index{guardar@{guardar}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{guardar(\+E\+S\+T\+A\+D\+O e)}{guardar(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} guardar (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_ac664824891a87ddaf2fb59cdec719475}{}\label{estado_8c_ac664824891a87ddaf2fb59cdec719475}
+
+
+ativa a variável e.\+ficheiro.\+guardar que é para guardar o estado num ficheiro para ser possível continuar mais tarde e também ativa a e.\+ficheiro.\+guardou para evitar que volte atrás para tentar jogar outra vez 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!inicializar@{inicializar}}
+\index{inicializar@{inicializar}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{inicializar(int nivel, int vida, int score, int menu)}{inicializar(int nivel, int vida, int score, int menu)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} inicializar (
+\begin{DoxyParamCaption}
+\item[{int}]{nivel, }
+\item[{int}]{vida, }
+\item[{int}]{score, }
+\item[{int}]{menu}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_a9bc2d9f65ff55a7b8196d0cd97cd4d62}{}\label{estado_8c_a9bc2d9f65ff55a7b8196d0cd97cd4d62}
+
+
+inicializa o estado 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nivel} & o nivel em que estamos \\
+\hline
+{\em vida} & a vida que temos/começamos \\
+\hline
+{\em score} & score que temos/começamos \\
+\hline
+{\em menu} & indica se estamos no menu ou não \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!instruction@{instruction}}
+\index{instruction@{instruction}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{instruction(\+E\+S\+T\+A\+D\+O e)}{instruction(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} instruction (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_a6a714f119130df7bb77d5766c827c42b}{}\label{estado_8c_a6a714f119130df7bb77d5766c827c42b}
+
+
+ativa a variável e.\+epecial.\+instruction que é para no menu ir para a página das instruções quando carrego no botão \char`\"{}\+Instructions\char`\"{} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!instruction2@{instruction2}}
+\index{instruction2@{instruction2}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{instruction2(\+E\+S\+T\+A\+D\+O e)}{instruction2(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} instruction2 (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_a09bebc4e760247c3d8bfff4ebb865b49}{}\label{estado_8c_a09bebc4e760247c3d8bfff4ebb865b49}
+
+
+ativa a variável e.\+especial.\+instruction2 que vai para a segunda página de instruções 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!ler@{ler}}
+\index{ler@{ler}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{ler(\+E\+S\+T\+A\+D\+O e)}{ler(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} ler (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_a6cd46b20f9ac835ad598a22422306603}{}\label{estado_8c_a6cd46b20f9ac835ad598a22422306603}
+
+
+ativa a variável e.\+ficheiro.\+ler que é para quando carregar em \char`\"{}\+Continue\char`\"{} saber que tenho de ir ao ficheiro à parte ler o estado que tinha guardado quando mandei guardar e começar o jogo com este estado 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!move\+\_\+player@{move\+\_\+player}}
+\index{move\+\_\+player@{move\+\_\+player}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{move\+\_\+player(\+E\+S\+T\+A\+D\+O e, int difx, int dify)}{move_player(ESTADO e, int difx, int dify)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} move\+\_\+player (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e, }
+\item[{int}]{difx, }
+\item[{int}]{dify}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_a69afa5319955dedcf873876e97490a80}{}\label{estado_8c_a69afa5319955dedcf873876e97490a80}
+
+
+move o jogador, vê se estamos em cima de obstáculo, se apanhamos o baú e move os monstros 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+{\em difx} & distancia a mover \\
+\hline
+{\em dify} & distancia a mover \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!move\+Enemy@{move\+Enemy}}
+\index{move\+Enemy@{move\+Enemy}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{move\+Enemy(\+E\+S\+T\+A\+D\+O e)}{moveEnemy(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} move\+Enemy (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_a1b7f4136b79a35985dfb503a9048f321}{}\label{estado_8c_a1b7f4136b79a35985dfb503a9048f321}
+
+
+move os inimigos 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!obstaculo@{obstaculo}}
+\index{obstaculo@{obstaculo}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{obstaculo(\+E\+S\+T\+A\+D\+O e)}{obstaculo(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}int obstaculo (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_a141cd44a37e7a01a418a7b722168fc67}{}\label{estado_8c_a141cd44a37e7a01a418a7b722168fc67}
+
+
+verifica se o jogador está em cima de obstáculos 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+retorna 1 se estiver em cima de obstáculos, 0 caso contrário 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!play@{play}}
+\index{play@{play}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{play(\+E\+S\+T\+A\+D\+O e)}{play(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} play (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_a71bc01d6d6858ac6bc9f44b720acbb52}{}\label{estado_8c_a71bc01d6d6858ac6bc9f44b720acbb52}
+
+
+desativa a váriavel e.\+especial.\+menu para começar o jogo 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!poder1@{poder1}}
+\index{poder1@{poder1}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{poder1(\+E\+S\+T\+A\+D\+O e)}{poder1(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} poder1 (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_aab123078675387a2210f02ef5beb5c5c}{}\label{estado_8c_aab123078675387a2210f02ef5beb5c5c}
+
+
+ativa o poder 1 e mete a variável e.\+especial.\+nope a 1 para evitar que o jogador volte atrás e possa estar sempre a escolher novos poderes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!poder2@{poder2}}
+\index{poder2@{poder2}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{poder2(\+E\+S\+T\+A\+D\+O e)}{poder2(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} poder2 (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_a856149e97a8950c66bd56ac2c8e71aed}{}\label{estado_8c_a856149e97a8950c66bd56ac2c8e71aed}
+
+
+ativa o poder 2 e mete a variável e.\+especial.\+nope a 1 para evitar que o jogador volte atrás e possa estar sempre a escolher novos poderes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!poder3@{poder3}}
+\index{poder3@{poder3}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{poder3(\+E\+S\+T\+A\+D\+O e)}{poder3(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} poder3 (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_ad3c28fb1b5957ae9ae04200b19629ab9}{}\label{estado_8c_ad3c28fb1b5957ae9ae04200b19629ab9}
+
+
+ativa o poder 3 e mete a variável e.\+especial.\+nope a 1 para evitar que o jogador volte atrás e possa estar sempre a escolher novos poderes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!poder4@{poder4}}
+\index{poder4@{poder4}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{poder4(\+E\+S\+T\+A\+D\+O e)}{poder4(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} poder4 (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_a109a08650897c5886099ef1af50f568f}{}\label{estado_8c_a109a08650897c5886099ef1af50f568f}
+
+
+ativa o poder 4 e mete a variável e.\+especial.\+nope a 1 para evitar que o jogador volte atrás e possa estar sempre a escolher novos poderes 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!pospossivel@{pospossivel}}
+\index{pospossivel@{pospossivel}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{pospossivel(\+E\+S\+T\+A\+D\+O e, int x, int y)}{pospossivel(ESTADO e, int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}int pospossivel (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_ab494c03bbc20bc1bee7f8d324febd0f4}{}\label{estado_8c_ab494c03bbc20bc1bee7f8d324febd0f4}
+
+
+verifica se a posição é possível 
+
+verifica se é possível a posição
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+{\em x} & abcissa a verificar \\
+\hline
+{\em y} & ordenada a verificar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+retorna 0 caso haja alguma coisa em (x,y) 1 caso contrário 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!pospossivel2@{pospossivel2}}
+\index{pospossivel2@{pospossivel2}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{pospossivel2(\+E\+S\+T\+A\+D\+O e, int x, int y)}{pospossivel2(ESTADO e, int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}int pospossivel2 (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_af275220099820d9ca12408615c368ecf}{}\label{estado_8c_af275220099820d9ca12408615c368ecf}
+
+
+verifica se a posição é possível mas para os movimentos do jogador 
+
+verifica se é possível a posição para me conseguir mover
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+{\em x} & abcisssa a verificar \\
+\hline
+{\em y} & ordenada a verificar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+retorna 0 caso haja alguma coisa em (x,y) 1 caso contrário 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!show@{show}}
+\index{show@{show}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{show(\+E\+S\+T\+A\+D\+O e, int x, int y)}{show(ESTADO e, int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} show (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_adc289b4c76628e1ac851e37f7d312f02}{}\label{estado_8c_adc289b4c76628e1ac851e37f7d312f02}
+
+
+ativa/desativa a variavel de controlo e.\+especial.\+show, quando carregamos num monstro de primeiro tipo guardamos as coordenadas dele para imprimir o que ele ataca 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+{\em x} & abcissa do monstro \\
+\hline
+{\em y} & ordenada do monstro \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!show2@{show2}}
+\index{show2@{show2}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{show2(\+E\+S\+T\+A\+D\+O e, int x, int y)}{show2(ESTADO e, int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} show2 (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_a796ca6f74f67f11f6e74112a369562c7}{}\label{estado_8c_a796ca6f74f67f11f6e74112a369562c7}
+
+
+ativa/desativa a variavel de controlo e.\+especial.\+show, quando carregamos num monstro de segundo tipo guardamos as coordenadas dele para imprimir o que ele ataca 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+{\em x} & abcissa do monstro \\
+\hline
+{\em y} & ordenada do monstro \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!show3@{show3}}
+\index{show3@{show3}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{show3(\+E\+S\+T\+A\+D\+O e, int x, int y)}{show3(ESTADO e, int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} show3 (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_a93f87d6a8260293b4087ad9df6f02b48}{}\label{estado_8c_a93f87d6a8260293b4087ad9df6f02b48}
+
+
+ativa/desativa a variavel de controlo e.\+especial.\+show, quando carregamos num monstro de terceiro tipo guardamos as coordenadas dele para imprimir o que ele ataca 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+{\em x} & abcissa do monstro \\
+\hline
+{\em y} & ordenada do monstro \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!show4@{show4}}
+\index{show4@{show4}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{show4(\+E\+S\+T\+A\+D\+O e, int x, int y)}{show4(ESTADO e, int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} show4 (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_aec5c9e536eb6e8a67428929dd302f560}{}\label{estado_8c_aec5c9e536eb6e8a67428929dd302f560}
+
+
+ativa/desativa a variavel de controlo e.\+especial.\+show, quando carregamos num monstro de quarto tipo guardamos as coordenadas dele para imprimir o que ele ataca 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+{\em x} & abcissa do monstro \\
+\hline
+{\em y} & ordenada do monstro \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!str2estado@{str2estado}}
+\index{str2estado@{str2estado}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{str2estado(char $\ast$argumentos)}{str2estado(char *argumentos)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} str2estado (
+\begin{DoxyParamCaption}
+\item[{char $\ast$}]{argumentos}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_a45c321c3b31e4e95b8451d7db7678cf0}{}\label{estado_8c_a45c321c3b31e4e95b8451d7db7678cf0}
+
+
+pega numa string e converte para estado de jogo (também não está a ser usado) 
+
+Função que converte uma string num estado.
+
+
+\begin{DoxyParams}{Parameters}
+{\em $\ast$argumentos} & query string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+estado de jogo 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!tem\+Inimigo@{tem\+Inimigo}}
+\index{tem\+Inimigo@{tem\+Inimigo}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{tem\+Inimigo(\+E\+S\+T\+A\+D\+O e, int x, int y)}{temInimigo(ESTADO e, int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}int tem\+Inimigo (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_a90c566e51f6fc49b0e9bceda39de3549}{}\label{estado_8c_a90c566e51f6fc49b0e9bceda39de3549}
+
+
+verifica se tem inimigo na posição (x,y) e dá 0 caso tenha 
+
+verifica se tem inimigo em (x,y)
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+{\em x} & abcissa a verificar \\
+\hline
+{\em y} & ordenada a verificar \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+retorna 0 caso tenho monstro em (x,y) 1 caso contrário 
+\end{DoxyReturn}
+\index{estado.\+c@{estado.\+c}!top\+Score@{top\+Score}}
+\index{top\+Score@{top\+Score}!estado.\+c@{estado.\+c}}
+\subsubsection[{\texorpdfstring{top\+Score(\+E\+S\+T\+A\+D\+O e)}{topScore(ESTADO e)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf E\+S\+T\+A\+DO} top\+Score (
+\begin{DoxyParamCaption}
+\item[{{\bf E\+S\+T\+A\+DO}}]{e}
+\end{DoxyParamCaption}
+)}\hypertarget{estado_8c_af767de19f387fb7d94c0258e7ecbc354}{}\label{estado_8c_af767de19f387fb7d94c0258e7ecbc354}
+
+
+ativa a variável e.\+epecial.\+topscore que é para no menu ir para a página dos scores quando carrego no botão \char`\"{}\+Highscore\char`\"{} 
+
+
+\begin{DoxyParams}{Parameters}
+{\em e} & estado de jogo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+novo estado de jogo 
+\end{DoxyReturn}
